@@ -25,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final isDesktop = MediaQuery.of(context).size.width >= 600;
+    final isKeyboardOpen = MediaQuery.of(context).viewInsets.bottom > 0;
 
     return Scaffold(
       body: Row(
@@ -67,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: !isDesktop
+      bottomNavigationBar: (!isDesktop && !isKeyboardOpen)
           ? NavigationBar(
               selectedIndex: _selectedIndex,
               onDestinationSelected: (int index) {

@@ -53,7 +53,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ],
       ),
       body: ListView(
-        padding: const EdgeInsets.all(24.0),
+        padding: const EdgeInsets.all(16.0),
         children: [
           _buildSectionTitle('Общие настройки'),
           Card(
